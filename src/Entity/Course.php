@@ -32,6 +32,12 @@ class Course
     #[ORM\Column]
     private ?bool $available = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $img = null;
+
     #[ORM\OneToOne(mappedBy: 'fk_course_id', cascade: ['persist', 'remove'])]
     private ?Review $review = null;
 
@@ -141,6 +147,30 @@ class Course
     public function setFkTrainerId(?Trainer $fk_trainer_id): self
     {
         $this->fk_trainer_id = $fk_trainer_id;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }

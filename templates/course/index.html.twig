@@ -6,15 +6,16 @@ block body %}
     {% for course in courses %}
     <div class="col-md-3 m-2">
       <div class="card" style="width: 18rem">
-        {# <img src="{{ course.picture }}" class="card-img-top" /> #} {#
+        {# <img src="{{ course.picture }}" class="card-img-top" /> #}
+
         <img
-          src="{{ asset ('pictures/' ~ course.img ) }}"
+          src="{{ asset ('pictures/'~ course.img) }}"
           class="card-img-top"
           alt="{{ course.name }}"
         />
-        #}
+
         <div class="card-body">
-          <h5 class="card-title">{{ course.description }}</h5>
+          <h5 class="card-title">{{ course.name }}</h5>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
@@ -31,9 +32,9 @@ block body %}
         </ul>
         <a
           href="{{ path('app_course_show', { id: course.id }) }}"
-          class="btn btn-success"
+          class="btn btn-danger opacity-75 rounded-0"
         >
-          See Course Details</a
+          Course Details</a
         >
       </div>
     </div>
