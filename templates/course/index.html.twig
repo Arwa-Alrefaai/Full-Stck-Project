@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %} {% block title %}Course index{% endblock %} {%
 block body %}
-
 <div class="container">
+  <div class="d-grid gap-2 col-4 mx-auto">
+    <a class="btn btn-warning my-2" href="{{ path('app_course_new') }}"
+      ><i class="bi bi-file-earmark-plus pe-2"></i>Add new course</a
+    >
+  </div>
   <div class="row d-flex justify-content-center">
     {% for course in courses %}
     <div class="col-md-3 m-2">
@@ -82,4 +86,4 @@ block body %}
     {% endfor %}
   </tbody>
 </table>
-#} {# <a href="{{ path('app_course_new') }}">Create new</a> #} {% endblock %}
+#} {% endblock %}
