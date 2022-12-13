@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{app.user}}!{% endblock %}
+{% block navbar_buttons %} 
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">HOME</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url('app_course_index')}}">MY PROFILE</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url('app_course_index')}}">BOOKING</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url('app_course_index')}}">REVIEW</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#contact">CONTACT</a>
+    </li>
+{% endblock %}
+{% block body %}
+    <h1>Welcome {{app.user}}</h1>
+
+
+    <div class="container ">
+        <div class="row row-cols-3 g-4"> 
+                <div class="card">
+                {# <p class="card-header text-bg-secondary">  </p>  #}
+                <div class="card-body" > 
+                <h5 class="card-title">{{ user.first_name user.last_name}}</h5><hr>
+                <p class="card-text"><b> Address: </b> {{ user.address }}</p>
+                <p class="card-text"><b>  Phone :</b> {{ user.phone }}</p>
+                <p class="card-text"> Email : {{ user.email }} € </p>
+            </div>  
+        </div> 
+    </div>
+
+
+{% endblock %}

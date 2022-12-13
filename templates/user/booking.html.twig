@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Course{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset ('css/details.css') }}" /> 
+{% endblock %}
+
+{% block body %}
+<div class="container ">
+    <h1>{{ course.name }}</h1>
+</div>
+<div class="grid-container">
+    <div class="grid-item  col-sm-8">
+        <img src="{{ asset ('pictures/' ~ course.img ) }}" class="img-fluid rounded-start" alt="..."> 
+     </div>
+     <div "grid-item">
+        
+     </div>
+</div>
+</div>
+
+    <a href="{{ path('app_course_edit', {'id': course.id}) }}">edit</a>
+
+    {{ include('course/_delete_form.html.twig') }}
+{% endblock %}

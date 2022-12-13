@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello {{app.user.getFirstName}}!{% endblock %}
+    {% block navbar %} 
+        {{parent()}}
+        {% block navbarButtons %}
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('app_course_index')}}">MY PROFILE</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('app_course_index')}}">REVIEW</a>
+        </li>
+        {% endblock %}
+    {% endblock %}
+
+{% block body %}
+
+    <h1>Welcome {{ app.user.getFirstName}}</h1>
+
+
+  
+
+
+{% endblock %}

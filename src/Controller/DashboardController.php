@@ -14,9 +14,9 @@ class DashboardController extends AbstractController
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        if ($this->getUser() && in_array("ROLE_ADMIN", $this->getUser()->getRoles())) {
-            return $this->redirectToRoute('app_course_index');
-        } 
+        // if ($this->getUser() && in_array("ROLE_ADMIN", $this->getUser()->getRoles())) {
+        //     return $this->redirectToRoute('app_course_index');
+        // } 
         $courses = $courseRepository->findAll();
         return $this->render('dashboard/index.html.twig', [
             'courses' => $courses,
